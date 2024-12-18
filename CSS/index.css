@@ -9,7 +9,7 @@ body, html {
 }
 
 header {
-    background-color: #f8f8f8;
+    background-color: transparent;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
     display: flex;
@@ -35,12 +35,127 @@ header nav a:hover {
     color: #007BFF;
 }
 
-.banner {
+/* Botão Home flutuante */
+.home-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #156876;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 5000;
+}
+
+.home-icon:hover {
+    background-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.home-icon span {
+    font-size: 20px;
+}
+
+/* Botão hambúrguer flutuante */
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #156876;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1550;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.hamburger:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: all 0.3s;
+}
+
+/* Tela de fundo escurecida */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu suspenso */
+.menu-container {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #156876;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-container.show {
+    top: 0;
+}
+
+.menu-container a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-container a:hover {
+    background-color: #555;
+}
+
+.banner{
     width: 100%;
     height: 300px;
-    background-image: url("/IMG/Untitled\ \(1\).png");
-    background-size: contain;
+    background-image: url("/IMG/Untitled\ \(19\).webp");
+    background-size: fill;
     background-position: center;
+    background-color: #5cb6f9;
 }
 .categories {
     padding: 2rem;
@@ -54,6 +169,8 @@ header nav a:hover {
 
 .products {
     /* display: grid; */
+    max-width: 70%;
+    margin-inline: auto;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
@@ -102,15 +219,7 @@ header nav a:hover {
 .product button:hover {
     background-color: #0056b3;
 }
-footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-footer p {
-    margin: 5px 0;
-}
+
 
 .categories .descricao {
     font-size: 1rem;
@@ -250,7 +359,7 @@ footer p {
     cursor: pointer; /* Cursor de clique */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação no hover */
-    z-index: 9999;
+    z-index: 1;
 }
 
 /* Efeito hover no botão */
@@ -277,7 +386,7 @@ footer p {
     display: flex; /* Alinha ícone e texto horizontalmente */
     align-items: center; /* Alinha verticalmente no centro */
     gap: 10px; /* Espaço entre o ícone e o texto */
-    z-index: 9999;
+    z-index: 1;
 }
 
 /* Ícone do WhatsApp */
@@ -293,7 +402,7 @@ footer p {
 }
 
 /* Responsividade com Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -305,7 +414,8 @@ footer p {
     }
 
     .banner {
-        height: 150px;
+        height: 210px;
+        background-size: cover;
     }
 
     .categories .descricao {
@@ -320,7 +430,9 @@ footer p {
     }
 
     .product {
-        min-width: 150px;
+        max-width: 300px;
+        min-width: 300px;
+        height: 200px;
     }
 
     .cupons {
@@ -329,12 +441,17 @@ footer p {
         margin-inline: auto;
     }
 
+    .products {
+        min-width: 100%;
+        margin-inline: none;
+    }
+
     .logo-desconto {
         display: flex;
         white-space: nowrap;
         align-items: center;
-        justify-content: space-around;
-        gap: 5rem;
+        justify-content: space-between;
+        width: 100%;
     }
     
     .cupom1 {
@@ -393,7 +510,7 @@ footer p {
         border: dashed 1px #ddd;
         border-radius: 30px;
         width: 300px;
-        height: 80px;
+        max-height: 80px;
         text-align: end;
     }
     
@@ -461,4 +578,244 @@ footer p {
     text-align: center;
     padding: 2rem;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CAMICADO */
+
+.cupom11 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
+    min-height: 150px;
+    max-height: 150px;
+    padding: 2.5rem 2.5rem 2.5rem 1.5rem;
+    gap: 1rem;
+}
+
+.cupom11 img {
+    width: 100px;
+    padding-right: .5rem;
+}
+
+.btn-desconto1 {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1.5px dashed #ddd;
+    border-radius: 30px;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+.cupom11 h1 {
+    padding-bottom: 1rem;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    z-index: 9999;
+}
+
+/* Estilização da modal */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.modal p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal .copy-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal .copy-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.modal .copy-btn.copied {
+    background-color: #17a2b8;
+    cursor: default;
+}
+
+.modal .close-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal .close-btn:hover {
+    background-color: #cc0000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.btn-cupom {
+    border: dashed 1px black;
+    /* min-width: 400px; */
+    margin-inline: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    border-radius: 30px;
+    font-size: 1.5rem !important;
+    gap: .5rem;
+}
+
+@media screen and (max-width: 1300px) {
+    
+    .cupom11 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
+        min-height: 400px;
+        flex-direction: column;
+        padding: 2.5rem;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .cupom11 img {
+        width: 100px;
+    }
+    
+    .btn-desconto1 {
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: 1.5px dashed #ddd;
+        border-radius: 30px;
+        padding: 1rem;
+        font-family: sans-serif;
+    }
+    
+    .cupom11 h1 {
+        padding-bottom: 1rem;
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
+
+    .btn-cupom {
+        border: dashed 1px black;
+        /* min-width: 400px; */
+        margin-inline: auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
+        padding: 1rem;
+        border-radius: 30px;
+        font-size: 1.2rem !important;
+    }
+}
+
+footer {
+    border-top: 1px solid hsl(0, 0%, 0%, .1);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+footer p {
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+.logo-desen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+.logo-desen img {
+    width: 80px;
+    
+}
+
+.botao1 {
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 30px;
+    background-color: #156876;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.botao1:hover {
+    box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 80vh; /* Define o limite de altura */
+    width: 80%; /* Largura da modal */
+    overflow-y: auto; /* Adiciona rolagem quando necessário */
 }

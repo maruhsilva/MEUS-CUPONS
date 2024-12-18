@@ -9,17 +9,9 @@
 </head>
 <body>
 
-    <!-- <header>
-        <div class="logo">Loja Inspirada</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header> -->
     
     <div class="banner"></div>
+    
     
     <section class="categories">
         <p>Economize em suas compras online usandos os melhores <b>CUPONS DE DESCONTO!</b></p>
@@ -41,6 +33,21 @@
             <img src="IMG/img-logo-renner.png" alt="Produto 3" style="object-fit: contain;">
         </div>
         </a>
+        <a href="cupons-camicado.html">
+        <div class="product">
+            <img src="IMG/cover-camicado.webp" alt="Produto 1" style="width: 250px; height: 220px;">
+        </div>
+        </a>
+        <a href="cupons-zzmal.html">
+        <div class="product">
+            <img src="IMG/cupom-de-desconto-zz-mall-logo-200-115.webp" alt="Produto 1">
+        </div>
+        </a>
+        <a href="cupons-youcom.html">
+            <div class="product">
+                <img src="IMG/145483eb540c71a47d2a32c775877d1f.png" alt="Produto 1" style="width: 250px; height: 200px;">
+            </div>
+        </a>
     </section>
     <br>
     <a href="">
@@ -50,13 +57,13 @@
         </button>
     </a>
 
-    <section class="cupons">
+    <section class="cupons" style="padding-bottom: 5rem;">
         <p class="recentes">Cupons de descontos <b>mais recentes</b></p>
 
         <br>
         <div class="cupom1">
             <div class="logo-desconto">
-            <img src="IMG/img-logo-renner.png" alt="logo-renner">
+            <img src="IMG/img-logo-renner.png" alt="logo-Renner" style="margin-right: 1rem; width: 80px;">
             <p class="btn-desconto">20% OFF</p>
             </div>
             <div class="descricao1">
@@ -66,13 +73,13 @@
             </div>
             <div class="container">
                 <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao">VER CUPOM</button>
+                <button class="botao" data-modal="modal1">VER CUPOM</button>
             </div>
         </div>
         <br>
-        <div class="cupom1">
+        <div class="cupom1" style="padding-left: 1.2rem;">
             <div class="logo-desconto">
-            <img src="IMG/w2wzmaduzw4uys1xtkmn.webp" alt="logo-rchlo">
+            <img src="IMG/w2wzmaduzw4uys1xtkmn.webp" alt="logo-rchlo" style="margin-right: .6rem;">
             <p class="btn-desconto">20% OFF</p>
             </div>
             <div class="descricao1">
@@ -82,32 +89,200 @@
             </div>
             <div class="container">
                 <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao">VER CUPOM</button>
+                <button class="botao" data-modal="modal2">VER CUPOM</button>
             </div>
         </div>
         <br>
-        <div class="cupom1">
+        <div class="cupom11">
             <div class="logo-desconto">
-            <img src="IMG/img-logo-renner.png" alt="logo-renner">
-            <p class="btn-desconto">20% OFF</p>
+                <img src="IMG/cover-camicado.webp" alt="logo Camicado">
+                <p class="btn-desconto1">20% OFF</p>
             </div>
             <div class="descricao1">
-                <h1>Cupom Renner 20% de desconto</h1>
-                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da Renner usando o cupom exclusivo. Válido em todo site ou aplicativo da Renner, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+                <h1>Cupom Camicado 20% de desconto</h1>
+                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da Camicado usando o cupom exclusivo. Válido em todo site ou aplicativo da Camicado, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
                 <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
             </div>
             <div class="container">
                 <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao">VER CUPOM</button>
+                <button class="botao" data-modal="modal3">VER CUPOM</button>
+            </div>
+        </div>
+        <br>
+        <div class="cupom1" style="padding-left: 1.2rem;">
+            <div class="logo-desconto">
+                <img src="IMG/140-1-7-2021-a8p5itd7ht.webp" alt="logo-c&a" style="margin-right: .6rem;">
+                <p class="btn-desconto">20% OFF</p>
+            </div>
+            <div class="descricao1">
+                <h1>Cupom C&A 20% de desconto</h1>
+                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da C&A usando o cupom exclusivo. Válido em todo site ou aplicativo da C&A, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+                <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
+            </div>
+            <div class="container">
+                <p class="texto">MAISCUPONS20OFF</p>
+                <button class="botao" data-modal="modal4">VER CUPOM</button>
             </div>
         </div>
     </section>
 
+     <!-- Modais -->
+    <div class="modal-overlay" id="modal1">
+        <div class="modal">
+            <h2>Cupom Renner 20% OFF</h2>
+            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Renner usando o cupom exclusivo. Válido em todo site ou aplicativo da Renner, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Renner</p>
+            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
+            <a href="https://www.lojasrenner.com.br/" target="_blank"><button class="close-btn">Acessar site da Renner</button></a>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal2">
+        <div class="modal">
+            <h2>Cupom Riachuelo 20% OFF</h2>
+            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Riachuelo usando o cupom exclusivo. Válido em todo site ou aplicativo da Riachuelo, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Riachuelo</p>
+            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
+            <a href="https://www.Riachuelo.com.br/" target="_blank"><button class="close-btn">Acessar site da Riachuelo</button></a>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal3">
+        <div class="modal">
+            <h2>Cupom Camicado 20% OFF</h2>
+            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Camicado usando o cupom exclusivo. Válido em todo site ou aplicativo da Camicado, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Camicado</p>
+            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
+            <a href="https://www.Camicado.com.br/" target="_blank"><button class="close-btn">Acessar site da Camicado</button></a>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal4">
+        <div class="modal">
+            <h2>Cupom C&A 20% OFF</h2>
+            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da C&A usando o cupom exclusivo. Válido em todo site ou aplicativo da C&A, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
+            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja C&A</p>
+            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
+            <a href="https://www.cea.com.br/" target="_blank"><button class="close-btn">Acessar site da C&A</button></a>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal20">
+        <div class="modal">
+            <h2>Política de Privacidade</h2>
+            <p style="text-align: justify;">Última atualização: 18/12/2024 <br><br>
+                A sua privacidade é muito importante para nós. Esta política de privacidade descreve como coletamos, utilizamos e protegemos suas informações pessoais ao acessar o site Promo Cupom, que disponibiliza cupons de desconto para lojas como C&A, Riachuelo, Renner, Camicado, ZZ Mall e Youcom.
+                <br><br>
+                <b>1. Coleta de Informações:</b>
+                <br>
+                Ao acessar o nosso site, podemos coletar automaticamente informações sobre sua navegação, incluindo seu endereço de IP. Essas informações são usadas apenas para fins de segurança, análise de tráfego e melhoria da experiência do usuário.
+                <br><br>
+                <b>2. Uso das Informações:</b>
+                <br>
+                O endereço de IP coletado será utilizado para:
+                <br>
+                Analisar a quantidade de acessos ao site e a origem do tráfego. <br>
+                Identificar possíveis abusos ou fraudes. <br>
+                Melhorar o desempenho e a segurança do site. <br><br>
+                <b>3. Cookies e Tecnologias de Rastreamento</b>
+                <br>
+                Nosso site utiliza cookies para melhorar a experiência de navegação. Os cookies são arquivos pequenos armazenados no seu dispositivo que ajudam a personalizar sua visita ao site. Você pode desabilitar os cookies nas configurações do seu navegador, mas isso pode afetar a funcionalidade do site.
+                <br><br>
+                <b>4. Compartilhamento de Informações:</b>
+                <br>
+                Não compartilhamos ou vendemos suas informações pessoais. O endereço de IP é usado internamente para fins de análise e segurança e não será compartilhado com terceiros, exceto quando exigido por lei ou para proteger os direitos do site.
+                <br><br>
+                <b>5. Segurança das Informações:</b>
+                <br>
+                Tomamos medidas de segurança adequadas para proteger as informações coletadas contra acessos não autorizados. No entanto, é importante lembrar que nenhuma transmissão de dados pela internet é completamente segura, e não podemos garantir segurança absoluta.
+                <br><br>
+                <b>6. Seus Direitos:</b>
+                <br>
+                Como o único dado pessoal coletado é o endereço de IP, não há necessidade de você fornecer outras informações. Caso deseje, você pode alterar as configurações de seu navegador para bloquear cookies, conforme mencionado acima.
+                <br><br>
+                <b>7. Alterações na Política de Privacidade:</b>
+                <br>
+                Podemos atualizar esta Política de Privacidade periodicamente. Caso haja alterações significativas, informaremos você por meio de aviso no nosso site. Recomendamos que revise nossa política de privacidade periodicamente para se manter informado.
+                <br><br>
+                <b>8. Contato:</b>
+                <br>
+                Se tiver alguma dúvida ou preocupação sobre esta Política de Privacidade, entre em contato conosco através do e-mail <a href="">contato@promocupom.com.br</a>.</p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    
+
     <footer>
-        <p>&copy; 2024 Loja Inspirada. Todos os direitos reservados.</p>
-        <p>Contato: contato@loja.com | Redes Sociais</p>
+        <p>&copy; 2024 Promo Cupom | Todos os direitos reservados.</p>
+        <p>Contato: contato@promocupom.com.br</p>
+        <button class="botao1" data-modal="modal20">Política de Privacidade</button>
+        <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.webp" alt="logo do desenvolvedor"></a>
     </footer>
     
+    <script>
+        // Seleciona todos os botões e adiciona evento de clique
+        document.querySelectorAll('.botao').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal'); // Obtém o ID da modal do atributo data-modal
+                const modal = document.getElementById(modalId); // Seleciona a modal correspondente
+                if (modal) {
+                    modal.style.display = 'block'; // Exibe a modal
+                }
+            });
+        });
+
+        // Seleciona todos os botões e adiciona evento de clique
+        document.querySelectorAll('.botao1').forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal'); // Obtém o ID da modal do atributo data-modal
+                const modal = document.getElementById(modalId); // Seleciona a modal correspondente
+                if (modal) {
+                    modal.style.display = 'block'; // Exibe a modal
+                }
+            });
+        });
+
+        // Fecha a modal ao clicar no botão de fechar
+        document.querySelectorAll('.close-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal-overlay').style.display = 'none'; // Fecha a modal atual
+            });
+        });
+
+        // Fecha a modal ao clicar fora do conteúdo
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    overlay.style.display = 'none'; // Fecha a modal
+                }
+            });
+        });
+
+        // Copiar texto ao clicar no botão
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const textToCopy = button.getAttribute('data-copy'); // Obtém o texto a ser copiado
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    button.textContent = 'Copiado'; // Altera o texto do botão
+                    button.classList.add('copied'); // Adiciona uma classe para mudar o estilo
+                    button.disabled = true; // Desativa o botão após copiar
+                    setTimeout(() => {
+                        button.textContent = 'Copiar'; // Restaura o texto após 3 segundos
+                        button.classList.remove('copied');
+                        button.disabled = false; // Reativa o botão
+                    }, 3000);
+                }).catch(err => {
+                    console.error('Falha ao copiar o texto: ', err);
+                });
+            });
+        });
+    </script>
+
     </body>
     </html>
     
