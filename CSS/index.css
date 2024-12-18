@@ -43,19 +43,21 @@ header nav a:hover {
     background-position: center;
 }
 .categories {
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
 }
 .categories p {
     margin-bottom: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
+
 .products {
     /* display: grid; */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,8 +67,12 @@ header nav a:hover {
     border-radius: 5px;
     text-align: center;
     transition: box-shadow 0.3s;
-    max-width: 250px;
-    
+    max-width: 300px;
+    min-width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .product:hover {
     box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
@@ -107,46 +113,352 @@ footer p {
 }
 
 .categories .descricao {
-    font-size: .9rem;
-    max-width: 90%;
+    font-size: 1rem;
+    max-width: 70%;
     margin-inline: auto;
 }
-.whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+
+.cupons {
+    max-width: 70%;
+    margin-inline: auto;
+}
+
+.cupom1 {
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s;
-    overflow: hidden;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
+    min-height: 150px;
+    max-height: 150px;
+    padding: 2.5rem;
+    gap: 1rem;
 }
-.whatsapp-button img {
-    width: 40px;
-    height: 40px;
-    margin-left: 50px;
+
+.cupom1 img {
+    width: 100px;
 }
-.whatsapp-button:hover {
-    width: 220px;
+
+.logo-desconto {
+    display: flex;
+}
+
+.btn-desconto {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 1.5px dashed #ddd;
     border-radius: 30px;
-    justify-content: flex-start;
-    padding-left: 10px;
+    padding: 1rem;
+    font-family: sans-serif;
 }
-.whatsapp-button span {
-    opacity: 0;
+
+.cupom1 h1 {
+    padding-bottom: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-descricao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .85rem;
+    padding-bottom: 1rem;
+    max-width: 95%;
+}
+
+
+.descricao1 p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .85rem;
+}
+
+/* Container pai */
+.container {
+    position: relative; /* Garante que os elementos filhos respeitem a posição */
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+    padding: 1rem 0;
+    text-align: center;
+    border: dashed 1px #ddd;
+    border-radius: 30px;
+    width: 350px;
+    height: 58.35px;
+    text-align: end;
+}
+
+/* Texto */
+.texto {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Botão */
+.botao {
+    position: absolute; /* Posiciona o botão sobre o texto */
+    bottom: -1px;
+    left: 30%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Corrige o centro */
+    padding: 1.1rem;
+    background-color: #ff7e5f;
     color: white;
-    font-size: 14px;
-    margin-left: 10px;
-    transition: opacity 0.3s;
+    border: 1px solid #ff7e5f;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Suaviza a animação */
+    white-space: nowrap;
+    font-size: 18px;
+    width: 220px;
 }
-.whatsapp-button:hover span {
-    opacity: 1;
+
+/* Efeito hover no botão */
+.botao:hover {
+    transform: translateX(-50%) translateX(-10px); /* Move apenas o botão para o lado */
+    background-color: #feb47b; /* Cor opcional ao passar o mouse */
+}
+
+.verify {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    opacity: 50%;
+}
+
+.fa-solid {
+    border: .2px solid green;
+    border-radius: 50%;
+    padding: .2rem;
+    text-align: center;
+    color: green;
+    font-size: .6rem;
+}
+
+/* Estilos do botão */
+.botao-flutuante {
+    position: fixed; /* Mantém o botão fixo na tela */
+    bottom: 80px;    /* Distância da parte inferior */
+    left: 10px;    /* Distância da parte direita */
+    background-color: #ff0000; /* Cor de fundo vermelha */
+    color: white;    /* Texto branco */
+    padding: 15px 20px; /* Espaçamento interno */
+    border: none;    /* Remove bordas padrão */
+    border-radius: 50px; /* Bordas arredondadas */
+    font-size: 13px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Cursor de clique */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação no hover */
+    z-index: 9999;
+}
+
+/* Efeito hover no botão */
+.botao-flutuante:hover {
+    transform: translateY(-5px); /* Move o botão ligeiramente para cima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Estilos do botão */
+.botao-flutuante1 {
+    position: fixed; /* Mantém o botão fixo na tela */
+    bottom: 20px;    /* Distância da parte inferior */
+    left: 10px;     /* Distância da parte direita */
+    background-color: #25d366; /* Verde estilo WhatsApp */
+    color: white;    /* Cor do texto */
+    padding: 15px 20px; /* Espaçamento interno */
+    border: none;    /* Remove a borda padrão */
+    border-radius: 50px; /* Borda arredondada */
+    font-size: 13px; /* Tamanho do texto */
+    font-weight: bold; /* Negrito no texto */
+    cursor: pointer; /* Cursor de clique */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavidade ao interagir */
+    display: flex; /* Alinha ícone e texto horizontalmente */
+    align-items: center; /* Alinha verticalmente no centro */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    z-index: 9999;
+}
+
+/* Ícone do WhatsApp */
+.botao-flutuante1 img {
+    width: 24px; /* Tamanho do ícone */
+    height: 24px; /* Tamanho do ícone */
+}
+
+/* Efeito hover no botão */
+.botao-flutuante1:hover {
+    transform: translateY(-5px); /* Move o botão ligeiramente para cima */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Responsividade com Media Queries */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .categories .descricao {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .categories p {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    .product {
+        min-width: 150px;
+    }
+
+    .cupons {
+        max-width: 100%;
+        padding: 1rem;
+        margin-inline: auto;
+    }
+
+    .logo-desconto {
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 5rem;
+    }
+    
+    .cupom1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(28, 29, 95, 0.2);
+        min-height: 400px;
+        flex-direction: column;
+        padding: 2.5rem;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .cupom1 img {
+        width: 100px;
+    }
+    
+    .btn-desconto {
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        border: 1.5px dashed #ddd;
+        border-radius: 30px;
+        padding: 1rem;
+        font-family: sans-serif;
+    }
+    
+    .cupom1 h1 {
+        padding-bottom: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .text-descricao {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .85rem;
+        padding-bottom: 1rem;
+        max-width: 95%;
+    }
+    
+    
+    .descricao1 p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .85rem;
+    }
+
+    .container {
+        position: relative; /* Garante que os elementos filhos respeitem a posição */
+        display: inline-block; /* Ajusta o tamanho ao conteúdo */
+        padding: 1rem 0;
+        text-align: center;
+        border: dashed 1px #ddd;
+        border-radius: 30px;
+        width: 300px;
+        height: 80px;
+        text-align: end;
+    }
+    
+    /* Texto */
+    .texto {
+        font-size: 18px;
+        color: #333;
+        margin: 0;
+        white-space: nowrap;
+    }
+    
+    /* Botão */
+    .botao {
+        position: absolute; /* Posiciona o botão sobre o texto */
+        bottom: -1px;
+        left: 45%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Corrige o centro */
+        padding: 1.1rem;
+        background-color: #ff7e5f;
+        color: white;
+        border: 1px solid #ff7e5f;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Suaviza a animação */
+        white-space: nowrap;
+        font-size: 18px;
+        width: 300px;
+    }
+    
+    /* Efeito hover no botão */
+    .botao:hover {
+        transform: translateX(-50%) translateX(-10px); /* Move apenas o botão para o lado */
+        background-color: #feb47b; /* Cor opcional ao passar o mouse */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .logo {
+        font-size: 18px;
+    }
+
+    .banner {
+        height: 120px;
+    }
+
+    .categories .descricao {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .categories p {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    .product {
+        padding: 0.5rem;
+    }
+
+}
+
+.recentes {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
