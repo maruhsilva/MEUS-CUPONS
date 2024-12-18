@@ -819,3 +819,40 @@ footer p {
     width: 80%; /* Largura da modal */
     overflow-y: auto; /* Adiciona rolagem quando necessário */
 }
+
+@media screen and (max-width: 700px) {
+    header .logo {
+        font-size: 18px;
+    }
+
+    .banner {
+        height: 120px;
+    }
+
+    .categories .descricao {
+        font-size: 1rem;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .categories p {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+
+    .product {
+        padding: 0.5rem;
+    }
+
+    .logo-desen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-desen img {
+        width: 80px;
+        padding-bottom: 6rem;   
+    }
+
+}
