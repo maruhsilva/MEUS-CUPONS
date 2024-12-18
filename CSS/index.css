@@ -768,7 +768,11 @@ header nav a:hover {
         gap: .5rem;
         padding: 1rem;
         border-radius: 30px;
-        font-size: 1.2rem !important;
+        font-size: .8rem !important;
+    }
+
+    .close-btn {
+        font-size: .8rem !important;
     }
 }
 
