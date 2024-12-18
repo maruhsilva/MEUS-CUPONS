@@ -8,7 +8,56 @@
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-
+    <style>
+        @media screen and (max-width:700px) {
+            .container {
+        position: relative; /* Garante que os elementos filhos respeitem a posição */
+        display: inline-block; /* Ajusta o tamanho ao conteúdo */
+        padding: 1rem 0;
+        text-align: center;
+        border: dashed 1px #ddd;
+        border-radius: 30px;
+        width: 300px;
+        max-height: 80px;
+        text-align: end;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2rem;
+    }
+    
+    /* Texto */
+    .texto {
+        font-size: 18px;
+        color: #333;
+        margin: 0;
+        white-space: nowrap;
+    }
+    
+    /* Botão */
+    .botao {
+        position: absolute; /* Posiciona o botão sobre o texto */
+        bottom: -1px;
+        left: 40%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Corrige o centro */
+        padding: 1.1rem;
+        background-color: #ff7e5f;
+        color: white;
+        border: 1px solid #ff7e5f;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Suaviza a animação */
+        white-space: nowrap;
+        font-size: 18px;
+        width: 300px;
+    }
+    
+    /* Efeito hover no botão */
+    .botao:hover {
+        transform: translateX(-50%) translateX(-10px); /* Move apenas o botão para o lado */
+        background-color: #feb47b; /* Cor opcional ao passar o mouse */
+    }
+        }
+    </style>
     
     <div class="banner"></div>
     
