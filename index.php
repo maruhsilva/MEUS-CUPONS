@@ -1,3 +1,11 @@
+<?php
+include 'conexao.php';
+
+// Consulta para pegar os 5 cupons mais recentes
+$stmt = $pdo->query("SELECT * FROM cupons ORDER BY data_adicao DESC LIMIT 5");
+$cuponsRecentes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -71,34 +79,34 @@
     </section>
     
     <section class="products">
-        <a href="cupons-cea.html">
+        <a href="cupons-cea.html?loja=cea">
         <div class="product">
-            <img src="IMG/140-1-7-2021-a8p5itd7ht.webp" alt="Produto 1">
+            <img src="IMG/logo-cea.webp" alt="Produto 1" style="object-fit: cover;">
         </div>
         </a>
-        <a href="cupons-rchlo.html">
+        <a href="cupons-rchlo.html?loja=rchlo">
         <div class="product">
-            <img src="IMG/w2wzmaduzw4uys1xtkmn.webp" alt="Produto 2" style="object-fit: cover;">    
+            <img src="IMG/logo-rchlo.webp" alt="Produto 2" style="object-fit: cover;">    
         </div>
         </a>
-        <a href="cupons-renner.html">
+        <a href="cupons-renner.html?loja=renner">
         <div class="product">
-            <img src="IMG/img-logo-renner.png" alt="Produto 3" style="object-fit: contain;">
+            <img src="IMG/logo-renner.webp" alt="Produto 3" style="object-fit: cover;">
         </div>
         </a>
-        <a href="cupons-camicado.html">
+        <a href="cupons-camicado.html?loja=camicado">
         <div class="product">
-            <img src="IMG/cover-camicado.webp" alt="Produto 1" style="width: 250px; height: 220px;">
+            <img src="IMG/logo-camicado.webp" alt="Produto 4" style="object-fit: cover;">
         </div>
         </a>
-        <a href="cupons-zzmal.html">
+        <a href="cupons-zzmall.html?loja=zzmall">
         <div class="product">
-            <img src="IMG/cupom-de-desconto-zz-mall-logo-200-115.webp" alt="Produto 1">
+            <img src="IMG/logo-zzmall.webp" alt="Produto 5" style="object-fit: cover;">
         </div>
         </a>
-        <a href="cupons-youcom.html">
+        <a href="cupons-youcom.html?loja=youcom">
             <div class="product">
-                <img src="IMG/145483eb540c71a47d2a32c775877d1f.png" alt="Produto 1" style="width: 250px; height: 200px;">
+                <img src="IMG/logo-youcom.webp" alt="Produto 6" style="object-fit: cover;">
             </div>
         </a>
     </section>
@@ -114,115 +122,106 @@
         <p class="recentes">Cupons de descontos <b>mais recentes</b></p>
 
         <br>
-        <div class="cupom1">
-            <div class="logo-desconto">
-            <img src="IMG/img-logo-renner.png" alt="logo-Renner" style="margin-right: 1rem; width: 80px;">
-            <p class="btn-desconto">20% OFF</p>
-            </div>
-            <div class="descricao1">
-                <h1>Cupom Renner 20% de desconto</h1>
-                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da Renner usando o cupom exclusivo. Válido em todo site ou aplicativo da Renner, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-                <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
-            </div>
-            <div class="container">
-                <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao" data-modal="modal1">VER CUPOM</button>
-            </div>
-        </div>
-        <br>
-        <div class="cupom1" style="padding-left: 1.2rem;">
-            <div class="logo-desconto">
-            <img src="IMG/w2wzmaduzw4uys1xtkmn.webp" alt="logo-rchlo" style="margin-right: .6rem;">
-            <p class="btn-desconto">20% OFF</p>
-            </div>
-            <div class="descricao1">
-                <h1>Cupom Riachuelo 20% de desconto</h1>
-                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da Riachuelo usando o cupom exclusivo. Válido em todo site ou aplicativo da Riachuelo, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-                <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
-            </div>
-            <div class="container">
-                <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao" data-modal="modal2">VER CUPOM</button>
-            </div>
-        </div>
-        <br>
-        <div class="cupom11">
-            <div class="logo-desconto">
-                <img src="IMG/cover-camicado.webp" alt="logo Camicado">
-                <p class="btn-desconto1">20% OFF</p>
-            </div>
-            <div class="descricao1">
-                <h1>Cupom Camicado 20% de desconto</h1>
-                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da Camicado usando o cupom exclusivo. Válido em todo site ou aplicativo da Camicado, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-                <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
-            </div>
-            <div class="container">
-                <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao" data-modal="modal3">VER CUPOM</button>
-            </div>
-        </div>
-        <br>
-        <div class="cupom1" style="padding-left: 1.2rem;">
-            <div class="logo-desconto">
-                <img src="IMG/140-1-7-2021-a8p5itd7ht.webp" alt="logo-c&a" style="margin-right: .6rem;">
-                <p class="btn-desconto">20% OFF</p>
-            </div>
-            <div class="descricao1">
-                <h1>Cupom C&A 20% de desconto</h1>
-                <p class="text-descricao">Ganhe 20% OFF e frete grátis no site ou aplicativo da C&A usando o cupom exclusivo. Válido em todo site ou aplicativo da C&A, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-                <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
-            </div>
-            <div class="container">
-                <p class="texto">MAISCUPONS20OFF</p>
-                <button class="botao" data-modal="modal4">VER CUPOM</button>
-            </div>
-        </div>
-    </section>
-
-     <!-- Modais -->
-    <div class="modal-overlay" id="modal1">
-        <div class="modal">
-            <h2>Cupom Renner 20% OFF</h2>
-            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Renner usando o cupom exclusivo. Válido em todo site ou aplicativo da Renner, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Renner</p>
-            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
-            <a href="https://www.lojasrenner.com.br/" target="_blank"><button class="close-btn">Acessar site da Renner</button></a>
-            <button class="close-btn">Fechar</button>
+        <!-- Seção de Cupons Recentes -->
+    <div id="cupons-recentes">
+        <div class="cupons" style="max-width: 100%; margin-inline: auto;">
+            <?php foreach ($cuponsRecentes as $cupom): ?>
+                <div class="cupom1">
+                    <div class="logo-desconto">
+                        <img src="IMG/logo-<?php echo $cupom['loja']; ?>.webp" alt="logo-<?php echo $cupom['loja']; ?>">
+                        <p class="btn-desconto"><?php echo $cupom['desconto']; ?></p>
+                    </div>
+                    <div class="descricao1">
+                        <h1><?php echo $cupom['titulo_h1']; ?></h1>
+                        <p class="text-descricao"><?php echo $cupom['descricao_card']; ?></p>
+                        <p class="verify"><i class="fa-solid fa-check"></i>Verificado</p>
+                    </div>
+                    <div class="container">
+                        <p class="texto"><?php echo $cupom['codigo']; ?></p>
+                        <button class="botao" data-modal="modal<?php echo $cupom['id']; ?>">VER CUPOM</button>
+                    </div>
+                </div><br>
+            <?php endforeach; ?>
         </div>
     </div>
 
-    <div class="modal-overlay" id="modal2">
-        <div class="modal">
-            <h2>Cupom Riachuelo 20% OFF</h2>
-            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Riachuelo usando o cupom exclusivo. Válido em todo site ou aplicativo da Riachuelo, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Riachuelo</p>
-            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
-            <a href="https://www.Riachuelo.com.br/" target="_blank"><button class="close-btn">Acessar site da Riachuelo</button></a>
-            <button class="close-btn">Fechar</button>
-        </div>
+    <!-- Modais para os Cupons -->
+    <div id="modals">
+        <?php foreach ($cuponsRecentes as $cupom): ?>
+            <div class="modal-overlay" id="modal<?php echo $cupom['id']; ?>">
+                <div class="modal">
+                    <h2><?php echo $cupom['titulo_modal']; ?></h2>
+                    <p><?php echo $cupom['descricao_modal']; ?></p>
+                    <p class="como-usar"><?php echo $cupom['como_usar']; ?></p>
+                    <p class="btn-cupom"><?php echo $cupom['codigo_modal']; ?>
+                        <button class="copy-btn" data-copy="<?php echo $cupom['data_copy_modal']; ?>">Copiar</button>
+                    </p><br>
+                    <a href="<?php echo $cupom['link_loja']; ?>" target="_blank">
+                        <button class="close-btn">Acessar site da <?php echo $cupom['loja_nome']; ?></button>
+                    </a>
+                    <button class="close-btn">Fechar</button>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 
-    <div class="modal-overlay" id="modal3">
-        <div class="modal">
-            <h2>Cupom Camicado 20% OFF</h2>
-            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da Camicado usando o cupom exclusivo. Válido em todo site ou aplicativo da Camicado, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja Camicado</p>
-            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
-            <a href="https://www.Camicado.com.br/" target="_blank"><button class="close-btn">Acessar site da Camicado</button></a>
-            <button class="close-btn">Fechar</button>
-        </div>
-    </div>
+    <!-- Script para Adicionar Funcionalidades de Modais e Copiar -->
+    <script>
+        // Função para adicionar ouvintes de evento aos botões da modal
+        function adicionarEventosModais() {
+            // Delegação de evento para os botões de abrir as modais
+            document.querySelector('.cupons').addEventListener('click', (event) => {
+                if (event.target.classList.contains('botao')) {
+                    const modalId = event.target.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = 'block'; // Exibe a modal
+                    }
+                }
+            });
 
-    <div class="modal-overlay" id="modal4">
-        <div class="modal">
-            <h2>Cupom C&A 20% OFF</h2>
-            <p>Ganhe 20% OFF e frete grátis no site ou aplicativo da C&A usando o cupom exclusivo. Válido em todo site ou aplicativo da C&A, exceto eletrônicos e itens remarcados. 20% OFF - a partir de R$99.</p>
-            <p class="como-usar" style="font-size: .8rem; padding-bottom: 1rem;">Copie e cole o código antes de finalizar a sua compra na loja C&A</p>
-            <p class="btn-cupom">PROMOCUPOM20OFF<button class="copy-btn" data-copy="PROMOCUPOM20OFF">Copiar</button></p><br>
-            <a href="https://www.cea.com.br/" target="_blank"><button class="close-btn">Acessar site da C&A</button></a>
-            <button class="close-btn">Fechar</button>
-        </div>
-    </div>
+            // Delegação de evento para os botões de fechar modal
+            document.querySelector('.cupons').addEventListener('click', (event) => {
+                if (event.target.classList.contains('close-btn')) {
+                    const modalOverlay = event.target.closest('.modal-overlay');
+                    if (modalOverlay) {
+                        modalOverlay.style.display = 'none'; // Fecha a modal
+                    }
+                }
+            });
+
+            // Fecha a modal ao clicar fora do conteúdo
+            document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        overlay.style.display = 'none'; // Fecha a modal
+                    }
+                });
+            });
+
+            // Delegação de evento para os botões de copiar texto
+            document.querySelector('.cupons').addEventListener('click', (event) => {
+                if (event.target.classList.contains('copy-btn')) {
+                    const textToCopy = event.target.getAttribute('data-copy');
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        event.target.textContent = 'Copiado'; // Altera o texto do botão
+                        event.target.classList.add('copied'); // Adiciona uma classe para mudar o estilo
+                        event.target.disabled = true; // Desativa o botão após copiar
+                        setTimeout(() => {
+                            event.target.textContent = 'Copiar'; // Restaura o texto após 3 segundos
+                            event.target.classList.remove('copied');
+                            event.target.disabled = false; // Reativa o botão
+                        }, 3000);
+                    }).catch(err => {
+                        console.error('Falha ao copiar o texto: ', err);
+                    });
+                }
+            });
+        }
+
+        // Chama a função para adicionar os eventos de modais
+        adicionarEventosModais();
+    </script>
 
     <div class="modal-overlay" id="modal20">
         <div class="modal">
@@ -274,6 +273,7 @@
         <p>&copy; 2024 Promo Cupom | Todos os direitos reservados.</p>
         <p>Contato: contato@promocupom.com.br</p>
         <button class="botao1" data-modal="modal20">Política de Privacidade</button>
+        <a href="admin.php"><button class="botao1">Painel do Administrador</button></a>
         <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.webp" alt="logo do desenvolvedor"></a>
     </footer>
     
